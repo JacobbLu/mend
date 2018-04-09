@@ -5,18 +5,19 @@ import {bindActionCreators} from 'redux';
 
 import Component from './component';
 
-// import {
-   // navToHome
-// } from '../../../store/actions/navigation';
+import {
+   loadGalleryRequest
+} from '../../../store/actions/gallery';
 
 function mapStateToProps (state) {
   return {
+    galleryData: state.getIn(['gallery', 'gallery']).toJS(),
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({
-    // navToHome
+    loadGalleryRequest
   }, dispatch);
 }
 

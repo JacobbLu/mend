@@ -70,7 +70,7 @@ export default class extends Component {
 	renderOptions(options){
 		return options.map((o, i) => {
 			return (
-				<span key={i} style={{marginLeft: '80px'}}>
+				<span key={i} style={{marginLeft: '30px'}}>
 					{o.size}  x  {o.quantity}
 				</span>
 			);

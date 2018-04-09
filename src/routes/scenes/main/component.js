@@ -57,22 +57,22 @@ export default class BoardPicker extends Component {
     return (
       <main>
         <Header />
-        <div className = "board-and-picker" style = {{textAlign: 'center', width: this.state.width, height: this.state.width, margin: "0 auto"}}>
+        <div className = "board-and-picker container" style = {{textAlign: 'center', width: this.state.width, height: this.state.width, margin: "0 auto"}}>
           <Board
             length={this.state.length}
             firstRender={this.state.firstRender}
             completed = {this.state.completed}
             getColor={ this.getColor }
             editBoard={ this.complete }/>
-          <img src={whiteT} style = {tShirtImageStyle}/>
-          <div style = {buttonContainerStyle}>
+          <img src={whiteT} className='whiteT'/>
+          <Picker firstRender={this.state.firstRender} open={!this.state.completed} handleChangeComplete={ this.handleChangeComplete }/>
+          <div className='addToCartSection' style={window.innerWidth < 800 && this.state.completed?{marginTop:window.innerWidth * 0.63} : {}}>
             <p style={priceTagStyle}>$ 66 USD</p>
             {!this.state.completed &&
             <button style = {buttonStyle} onClick = { this.complete }>done</button>}
             {this.state.completed &&
               <button style = {buttonStyle} onClick = {this.onOpenModal}> Add to Bag </button> }
           </div>
-          <Picker firstRender={this.state.firstRender} open={!this.state.completed} handleChangeComplete={ this.handleChangeComplete }/>
         </div>
         <Modal open={this.state.modalOpen} onClose={this.onCloseModal} little>
           <Cart />
@@ -81,18 +81,6 @@ export default class BoardPicker extends Component {
     );
   }
 
-}
-
-const buttonContainerStyle = {
-  position: 'fixed',
-  left: '80%',
-  top: '368px',
-  zIndex: '1000',
-  borderTopStyle: 'solid',
-  borderBottomStyle: 'solid',
-  borderWidth: '1px',
-  width: '156px',
-  height: '100px',
 }
 
 const priceTagStyle = {
@@ -108,14 +96,4 @@ const buttonStyle = {
   fontSize: '13px',
   width: '100px',
   borderStyle: 'none',
-}
-
-
-const tShirtImageStyle = {
-  'position': 'fixed',
-  'width': '500px',
-  'zIndex': '-1',
-  'left': '50%',
-  'marginLeft': '-250px',
-  'top': '130px'
 }

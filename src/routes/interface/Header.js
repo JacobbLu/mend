@@ -27,8 +27,8 @@ class Header extends Component {
           margin: '0px'
         }}>mend</p>
         <div style={{textAlign:'left'}}>
-          <Link to="/" style={menuItemStyle}>Home</Link>
-      		<Link to="/about" style={menuItemStyle}>About</Link>
+          <Link to="/make-your-own" style={menuItemStyle}>MakeYourOwn</Link>
+          <Link to="/" style={menuItemStyle}>Gallery</Link>
         </div>
       </div>
     );

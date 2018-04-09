@@ -5,9 +5,6 @@
   "scripts": {
     "start": "node ./bin/www"
   },
-  "engines": {
-    "node": "8.9.4"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/heroku/desolate-waters-58947"

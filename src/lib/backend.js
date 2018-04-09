@@ -20,3 +20,8 @@ export function loadCart(payload) {
   // console.log('Cookie Detail', payload);
   return postReq(serverHost + 'cart', payload);
 }
+
+export function loadGallery(payload) {
+  console.log('Load gallery Request');
+  return postReq(serverHost + 'gallery', payload);
+}

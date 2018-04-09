@@ -61,7 +61,7 @@ class Cart extends Component {
               this.props.preCart[i].size = v.value;
             }}
             value={this.props.preCart[i].size}
-            placeholder="Select A Size"
+            placeholder="Size"
           />
         </div>
         <div style={cellStyle}>
@@ -71,7 +71,7 @@ class Cart extends Component {
               this.props.preCart[i].quantity = v.value;
             }}
             value={this.props.preCart[i].quantity}
-            placeholder="Select Quantity"
+            placeholder="Quantity"
           />
         </div>
         <div style={{textAlign:'center', display:'inline-block', width:'10%'}}>
@@ -96,7 +96,7 @@ class Cart extends Component {
 
   render() {
     return (
-      <div style={{width:'500px',textAlign:'left', fontFamily: 'SANS-SERIF'}}>
+      <div className='modal'>
         <div style={{borderBottomStyle:'solid'}}>
           <h1>Add To Bag</h1>
         </div>

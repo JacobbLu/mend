@@ -8,7 +8,7 @@ class Board extends Component {
     super(props);
     this.state = {
       length: this.props.length,
-      width: this.props.completed ? window.innerWidth * 0.2 : 350,
+      width: window.innerWidth >= 600 ? 350 : window.innerWidth * 0.8,
     };
     this.updateDimensions = this.updateDimensions.bind(this);
     this.getPixels = this.getPixels.bind(this);
@@ -17,11 +17,8 @@ class Board extends Component {
   }
 
   updateDimensions() {
-    if (this.props.completed === true) {
-      this.setState({width: window.innerWidth * 0.2 });
-    }else{
-      this.setState({width: 350 });
-    }
+    console.log('here');
+    this.setState({width: window.innerWidth >= 600 ? 350 : window.innerWidth * 0.8});
   }
 
   componentWillMount() {
@@ -72,13 +69,13 @@ class Board extends Component {
         <div
           className = "pixel-board"
           style = {{
-              boxShadow: "-10px 10px 20px rgba(200, 200, 200, 0.8)",
+              boxShadow: "0px 0px 30px rgba(200, 200, 200, 0.8)",
               width: this.state.width,
               height: this.state.width,
               margin: "0 auto",
               marginTop: "20px",
               borderStyle: 'solid',
-              borderWidth: '1px',
+              borderWidth: '0px',
           }}
         >
           {this.getPixels()}
@@ -94,8 +91,8 @@ class Board extends Component {
             width: this.state.width,
           }}
           style={{
-            height: spring(70, presets.gentle),
-            width: spring(70, presets.gentle),
+            height: spring(window.innerWidth <= 600 ? window.innerWidth * 0.13 : 70, presets.gentle),
+            width: spring(window.innerWidth <= 600 ? window.innerWidth * 0.13 : 70, presets.gentle),
           }}
         >
           {interpolatingStyle =>
@@ -105,7 +102,7 @@ class Board extends Component {
                 width: interpolatingStyle.width,
                 height: interpolatingStyle.height,
                 margin: "0 auto",
-                marginTop: 110
+                marginTop: window.innerWidth < 600 ? 54 + 56 * ((window.innerWidth * 0.9) / 500) : 110
             }}
             onClick = {this.props.editBoard}
           >
@@ -115,8 +112,8 @@ class Board extends Component {
         :
         <Motion
           defaultStyle={{
-            height: 70,
-            width: 70,
+            height: window.innerWidth <= 600 ? window.innerWidth * 0.13 : 70,
+            width: window.innerWidth <= 600 ? window.innerWidth * 0.13 : 70,
           }}
           style={{
             height: spring(this.state.width, presets.gentle),
@@ -127,13 +124,13 @@ class Board extends Component {
           <div
             className = "pixel-board"
             style = {{
-                boxShadow: "-10px 10px 20px rgba(200, 200, 200, 0.8)",
+                boxShadow: "0px 0px 30px rgba(200, 200, 200, 0.8)",
                 width: interpolatingStyle.width,
                 height: interpolatingStyle.height,
                 margin: "0 auto",
                 marginTop: 20,
                 borderStyle: 'solid',
-                borderWidth: '1px',
+                borderWidth: '0px',
             }}
           >
             {this.getPixels()}

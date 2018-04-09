@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
 router.post('/', function(req, res, next) {
   const db = req.db;
   const cookieKeys = req.body.currentCartKeys;

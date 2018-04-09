@@ -1,0 +1,88 @@
+@media only screen and (max-width: 600px) {
+    .whiteT{
+      width: 90%;
+      position: absolute;
+      z-index: -1;
+      top: 130px;
+      left:0;
+      right:0;
+      margin:auto;
+    }
+    .slick{
+      width: 13%;
+      margin: auto;
+      margin-top: 17%
+    }
+    .modal{
+      width:95%;
+      text-align:left;
+      font-family: SANS-SERIF
+    }
+    .picker{
+      width: 90%;
+      margin: auto;
+      margin-top: 20px;
+      box-shadow: -10px 10px 20px rgba(200, 200, 200, 0.8)
+    }
+}
+@media only screen and (min-width: 600px) {
+    .whiteT{
+      position: absolute;
+      width: 500px;
+      z-index: -1;
+      margin-left: 50%;
+      left: -250px;
+      top: 130px
+    }
+    .slick{
+      width: 71px;
+      margin: auto;
+      margin-top: 110px;
+    }
+    .modal{
+      width:500px;
+      text-align:left;
+      font-family: SANS-SERIF
+    }
+    .picker{
+      width: 500px;
+      margin: auto;
+      margin-top: 20px;
+      box-shadow: 0px 0px 30px rgba(200, 200, 200, 0.8)
+    }
+}
+@media only screen and (max-width: 800px) {
+  .addToCartSection{
+    z-index: 1000;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    width: 156px;
+    height: 100px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .addToCartSection{
+    position: fixed;
+    left: 80%;
+    top: 368px;
+    z-index: 1000;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1px;
+    width: 156px;
+    height: 100px;
+  }
+}
+.pixel{
+  width: 9.0909%;
+  padding-top: 9.0909%;
+  display: inline-block;
+  float: left;
+}
+.pixel-row{
+  width: 100%;
+}

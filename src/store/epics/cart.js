@@ -54,7 +54,7 @@ const loadCartRequest = (action$, store) =>
         })
         .catch((error) => Rx.Observable.of(error)
           .do((error) =>{
-            console.log('add to cart failure');
+            console.log('load cart failure');
           })
           .map(()=>loadCartFailure(payload))
         )

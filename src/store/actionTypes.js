@@ -13,4 +13,8 @@ export default keyMirror({
   LOAD_CART_REQUEST: null,
   LOAD_CART_SUCCESS: null,
   LOAD_CART_FAILURE: null,
+
+  LOAD_GALLERY_REQUEST: null,
+  LOAD_GALLERY_SUCCESS: null,
+  LOAD_GALLERY_FAILURE: null,
 });
